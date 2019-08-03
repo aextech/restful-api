@@ -3,7 +3,7 @@ AEX RESTful API Protocol Documentation (V2)
 
 **Currently V2 version only provides public data access, and does not provide user data access.**
 
-[Chinese Document](/REAME.md)
+[Chinese Document](/README.md)
 
 # Table Of Contents
 + [Public Data Access](#request--response)
