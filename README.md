@@ -36,5 +36,23 @@ AEX RESTful API 协议说明文档 （V2）
   ```
   应答
   ```
+  {
+    "eno":0,
+    "emsg":"",
+    "data":[
+      {
+        "market":"usdt",
+        "coin":"btc",
+        "limits":{
+           "PricePrecision":0,
+           "AmtPrecision":6,
+           "AmtMax":"10000000.00000000",
+           "AmtMin":"0.00000100",
+           "PriceMax":"1000000.00000000",
+           "MoneyMin":"1.00000000"
+         }
+       }
+	  ]
+  }	
   ```
   
