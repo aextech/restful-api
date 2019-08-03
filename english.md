@@ -4,12 +4,12 @@ AEX RESTful API Protocol Documentation (V2)
 **Currently V2 version only provides public data access, and does not provide user data access.**
 
 # Table Of Contents
-+ [Public Data Access](# request response)
-  + [Get all market pair information](#Get all deal pair information)
-  + [Get specified market pair information](#Get the specified transaction pair information)
-  + [Get ticker data of specified market pair](#Get the specified transaction vs. market data)
-  + [Get depth of specified market pair](#Get the specified trade to depth)
-  + [Get latest trade data of specified market pair](#Get the specified transaction to the latest transaction data)
++ [Public Data Access](#request--response)
+  + [Get all market pair information](#get-all-market-pair-information)
+  + [Get specified market pair information](#get-specified-market-pair-information)
+  + [Get ticker data of specified market pair](#get-ticker-data-of-specified-market-pair)
+  + [Get depth of specified market pair](#get-latest-trade-data-of-specified-market-pair)
+  + [Get latest trade data of specified market pair](#get-latest-trade-data-of-specified-market-pair)
   + [Get historical trade data of specified market pair](#Get the specified transaction vs. historical transaction data)
 + User Data Access (not yet implemented)
 
@@ -127,7 +127,7 @@ Error code | Description
     ]
   }
   ```
-## Get latest trade data of specified market pair
+## Get depth of specified market pair
 
   Request URL
   ```
