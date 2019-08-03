@@ -9,7 +9,7 @@ AEX RESTful API Protocol Documentation (V2)
   + [Get specified market pair information](#get-specified-market-pair-information)
   + [Get ticker data of specified market pair](#get-ticker-data-of-specified-market-pair)
   + [Get depth of specified market pair](#get-depth-of-specified-market-pair)
-  + [Get latest trade data of specified market pair](#get-latest-trade-data-of-specified-market-pair)
+  + [Get latest trade data of specified market pair](#get-the-latest-transaction-data-for-the-specified-transaction)
   + [Get historical trade data of specified market pair](#get-historical-trade-data-of-specified-market-pair)
 + User Data Access (not yet implemented)
 
