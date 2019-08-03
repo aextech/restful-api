@@ -39,19 +39,19 @@ AEX RESTful API 协议说明文档 （V2）
   应答（json）
   ```
   {
-    "eno":0,
-    "emsg":"",
+    "eno":0,     // 错误码
+    "emsg":"",   // 错误描述
     "data":[
       {
-        "market":"usdt",
-        "coin":"btc",
+        "market":"usdt",  // 市场
+        "coin":"btc",     // 币名
         "limits":{
-          "PricePrecision":0,
-          "AmtPrecision":6,
-          "AmtMax":"10000000.00000000",
-          "AmtMin":"0.00000100",
-          "PriceMax":"1000000.00000000",
-          "MoneyMin":"1.00000000"
+          "PricePrecision":0,  // 挂单价格精度
+          "AmtPrecision":6,    // 挂单数量精度
+          "AmtMax":"10000000.00000000",  // 最大挂单数量
+          "AmtMin":"0.00000100",         // 最小挂单数量
+          "PriceMax":"1000000.00000000", // 最大挂单价格
+          "MoneyMin":"1.00000000"        // 最小挂单资金 <= 挂单价格* 挂单数量
         }
       }
     ]
@@ -74,19 +74,19 @@ AEX RESTful API 协议说明文档 （V2）
   应答（json）
   ```
   {
-    "eno":0,
-    "emsg":"",
+    "eno":0,     // 错误码
+    "emsg":"",   // 错误描述
     "data":[
       {
-        "market":"cnc",
-        "coin":"btc",
+        "market":"usdt",  // 市场
+        "coin":"btc",     // 币名
         "limits":{
-          "PricePrecision":0,
-          "AmtPrecision":6,
-          "AmtMax":"10000000.00000000",
-          "AmtMin":"0.00000100",
-          "PriceMax":"1000000.00000000",
-          "MoneyMin":"1.00000000"
+          "PricePrecision":0,  // 挂单价格精度
+          "AmtPrecision":6,    // 挂单数量精度
+          "AmtMax":"10000000.00000000",  // 最大挂单数量
+          "AmtMin":"0.00000100",         // 最小挂单数量
+          "PriceMax":"1000000.00000000", // 最大挂单价格
+          "MoneyMin":"1.00000000"        // 最小挂单资金 <= 挂单价格* 挂单数量
         }
       }
     ]
@@ -109,20 +109,20 @@ AEX RESTful API 协议说明文档 （V2）
   应答（json）
   ```
   {
-    "eno":0,
-    "emsg":"",
+    "eno":0,     // 错误码
+    "emsg":"",   // 错误描述
     "data":[
       {
-        "market":"cnc",
-        "coin":"btc",
+        "market":"cnc",   // 市场
+        "coin":"btc",     // 币名
         "ticker":{
-          "high":75501,
-          "low":72231,
-          "last":74654,
-          "vol":6448.69997,
-          "buy":74666,
-          "sell":74728,
-          "range":0.0257
+          "high":75501,     // 24小时内的最高价
+          "low":72231,      // 24小时内的最低价
+          "last":74654,     // 最近1次成交价
+          "vol":6448.69997, // 24小时成交量
+          "buy":74666,      // 当前买1价
+          "sell":74728,     // 当前卖1价
+          "range":0.0257    // 最新成交价跟24小时之前成交价的波动比例
         }
       }
     ]
@@ -145,19 +145,19 @@ AEX RESTful API 协议说明文档 （V2）
   应答（json）
   ```
   {
-    "eno":0,
-    "emsg":"",
+    "eno":0,    // 错误码
+    "emsg":"",  // 错误描述
     "data":{
-    "bids":[
+      "bids":[
         [
-          74665,
-          0.13298
+          74665,    // 买价
+          0.13298   // 买量
         ]
       ],
-    "asks":[
+      "asks":[
         [
-          74734,
-          1.198882
+          74734,    // 卖价
+          1.198882  // 卖量
         ]
       ]
     }
@@ -181,15 +181,15 @@ AEX RESTful API 协议说明文档 （V2）
   应答（json）
   ```
   {
-    "eno":0,
-    "emsg":"",
+    "eno":0,    // 错误码
+    "emsg":"",  // 错误描述
     "data":[
       {
-        "tradeid":3428804,
-        "time":1563413853,
-        "type":"buy",
-        "price":40200,
-        "amount":0.004975
+        "tradeid":3428804,  // 成交ID
+        "time":1563413853,  // 成交时间，单位秒
+        "type":"buy",       // 成交类型: buy=买, sell=卖
+        "price":40200,      // 成交价
+        "amount":0.004975   // 成交数量
       }
     ]
   }
@@ -213,15 +213,15 @@ AEX RESTful API 协议说明文档 （V2）
   应答（json）
   ```
   {
-    "eno":0,
-    "emsg":"",
+    "eno":0,    // 错误码
+    "emsg":"",  // 错误描述
     "data":[
       {
-        "tradeid":3428804,
-        "time":1563413853,
-        "type":"buy",
-        "price":40200,
-        "amount":0.004975
+        "tradeid":3428804,  // 成交ID
+        "time":1563413853,  // 成交时间，单位秒
+        "type":"buy",       // 成交类型: buy=买, sell=卖
+        "price":40200,      // 成交价
+        "amount":0.004975   // 成交数量
       }
     ]
   }
