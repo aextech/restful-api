@@ -11,7 +11,7 @@ AEX RESTful API 协议说明文档 （V2）
    + [获取指定交易对深度](#cmd-5-获取余额)
    + [获取指定交易对最新成交数据](#cmd-6-挂单)
    + [获取指定交易对历史成交数据](#cmd-7-撤单)
-+ [用户数据接口](#订单和成交记录的关联)
++ [用户数据接口（暂未实现）]()
 
 # 错误码
 错误码 | 说明
@@ -34,7 +34,7 @@ AEX RESTful API 协议说明文档 （V2）
   ```
   GET /v2/allpair.php
   ```
-  应答
+  应答（json）
   ```
   {
     "eno":0,
@@ -44,15 +44,142 @@ AEX RESTful API 协议说明文档 （V2）
         "market":"usdt",
         "coin":"btc",
         "limits":{
-           "PricePrecision":0,
-           "AmtPrecision":6,
-           "AmtMax":"10000000.00000000",
-           "AmtMin":"0.00000100",
-           "PriceMax":"1000000.00000000",
-           "MoneyMin":"1.00000000"
-         }
-       }
-	  ]
+          "PricePrecision":0,
+          "AmtPrecision":6,
+          "AmtMax":"10000000.00000000",
+          "AmtMin":"0.00000100",
+          "PriceMax":"1000000.00000000",
+          "MoneyMin":"1.00000000"
+        }
+      }
+    ]
   }	
   ```
++ 获取指定交易对信息   
+
+  请求（比如：market=cnc, coin=btc）
+  ```
+  GET /v2/pair.php?market={market}&coin={coin}
+  ```
+  应答（json）
+  ```
+  {
+    "eno":0,
+    "emsg":"",
+    "data":[
+      {
+        "market":"cnc",
+        "coin":"btc",
+        "limits":{
+          "PricePrecision":0,
+          "AmtPrecision":6,
+          "AmtMax":"10000000.00000000",
+          "AmtMin":"0.00000100",
+          "PriceMax":"1000000.00000000",
+          "MoneyMin":"1.00000000"
+        }
+      }
+    ]
+  }	
+  ```  
++ 获取指定交易对行情数据   
+
+  请求（比如：market=cnc, coin=btc）
+  ```
+  GET /v2/tickers.php?market={market}&coin={coin}
+  ```
+  应答（json）
+  ```
+  {
+    "eno":0,
+    "emsg":"",
+    "data":[
+      {
+        "market":"cnc",
+        "coin":"btc",
+        "ticker":{
+          "high":75501,
+          "low":72231,
+          "last":74654,
+          "vol":6448.69997,
+          "buy":74666,
+          "sell":74728,
+          "range":0.0257
+        }
+      }
+    ]
+  }
+  ```  
++ 获取指定交易对深度   
+
+  请求（比如：market=cnc, coin=btc）
+  ```
+  GET /v2/depth.php?market={market}&coin={coin}
+  ```
+  应答（json）
+  ```
+  {
+    "eno":0,
+    "emsg":"",
+    "data":{
+    "bids":[
+        [
+          74665,
+          0.13298
+        ]
+      ],
+    "asks":[
+        [
+          74734,
+          1.198882
+        ]
+      ]
+    }
+  }
+  ```    
++ 获取指定交易对最新成交数据   
+
+  请求（比如：market=cnc, coin=btc, limit可选，默认为10，最大50）
+  ```
+  GET /v2/lasttrades.php?market={market}&coin={coin}&limit={limit}
+  ```
+  应答（json）
+  ```
+  {
+    "eno":0,
+    "emsg":"",
+    "data":[
+      {
+        "tradeid":3428804,
+        "time":1563413853,
+        "type":"buy",
+        "price":40200,
+        "amount":0.004975
+      }
+    ]
+  }
+  ```      
++ 获取指定交易对历史成交数据   
+
+  请求（比如：market=cnc, coin=btc, limit可选，默认为10，最大50）
+  ```
+  GET /v2/trades.php?market={market}&coin={coin}&fromid={fromTradeID}&limit={limit}
+  ```
+  应答（json）
+  ```
+  {
+    "eno":0,
+    "emsg":"",
+    "data":[
+      {
+        "tradeid":3428804,
+        "time":1563413853,
+        "type":"buy",
+        "price":40200,
+        "amount":0.004975
+      }
+    ]
+  }
+  ```      
+  
   
