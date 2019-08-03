@@ -9,6 +9,7 @@ AEX RESTful API Protocol Documentation (V2)
 + [Public Data Access](#request--response)
   + [Get all market pair information](#get-all-market-pair-information)
   + [Get specified market pair information](#get-specified-market-pair-information)
+  + [Get all ticker data](#get-ticker-data-of-specified-market-pair)
   + [Get ticker data of specified market pair](#get-ticker-data-of-specified-market-pair)
   + [Get depth of specified market pair](#get-depth-of-specified-market-pair)
   + [Get latest trade data of specified market pair](#get-the-latest-transaction-data-for-the-specified-transaction)
@@ -35,7 +36,7 @@ Error code | Description
   ```
   GET /v2/allpair.php
   ```
-  Request parameters: none
+  Request parameters: None
   
   Response (json)
   ```
@@ -93,6 +94,37 @@ Error code | Description
     ]
   }
   ```
+## Get all ticker data
+
+  Request URL
+  ```
+  GET /v2/alltickers.php
+  ```
+  Request parameters: None
+
+
+  Response (json)
+  ```
+  {
+    "eno": 0, // error code
+    "emsg":"", // error description
+    "data":[
+      {
+        "market":"cnc", // market
+        "coin": "btc", // currency name
+        "ticker":{
+          "high": 75501, // the highest price within 24 hours
+          "low": 72231, // lowest price within 24 hours
+          "last":74654, // Last 1 transaction price
+          "vol":6448.69997, // 24 hour volume
+          "buy":74666, // currently buy 1 price
+          "sell":74728, // currently sells 1 price
+          "range":0.0257 // The latest transaction price and the fluctuation ratio of the transaction price before 24 hours
+        }
+      }
+    ]
+  }
+  ```
 ## Get ticker data of specified market pair
 
   Request URL
@@ -128,7 +160,7 @@ Error code | Description
       }
     ]
   }
-  ```
+  ```  
 ## Get depth of specified market pair
 
   Request URL
