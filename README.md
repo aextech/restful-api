@@ -30,10 +30,12 @@ AEX RESTful API 协议说明文档 （V2）
 # 请求/应答
 ## 获取所有交易对信息   
 
-  请求
+  请求URL
   ```
   GET /v2/allpair.php
   ```
+  请求参数: 无
+  
   应答（json）
   ```
   {
@@ -57,10 +59,18 @@ AEX RESTful API 协议说明文档 （V2）
   ```
 ## 获取指定交易对信息   
 
-  请求（比如：market=cnc, coin=btc）
+  请求URL
   ```
   GET /v2/pair.php?market={market}&coin={coin}
   ```
+  请求参数:   
+  
+  参数名  | 说明
+  -----  | ---------
+  market | 交易区，比如 cnc
+  coin   | 币名，比如 btc
+  
+  
   应答（json）
   ```
   {
@@ -84,10 +94,18 @@ AEX RESTful API 协议说明文档 （V2）
   ```  
 ## 获取指定交易对行情数据   
 
-  请求（比如：market=cnc, coin=btc）
+  请求URL
   ```
   GET /v2/tickers.php?market={market}&coin={coin}
   ```
+  请求参数:   
+  
+  参数名  | 说明
+  -----  | ---------
+  market | 交易区，比如 cnc
+  coin   | 币名，比如 btc
+  
+  
   应答（json）
   ```
   {
@@ -112,10 +130,18 @@ AEX RESTful API 协议说明文档 （V2）
   ```  
 ## 获取指定交易对深度   
 
-  请求（比如：market=cnc, coin=btc）
+  请求URL
   ```
   GET /v2/depth.php?market={market}&coin={coin}
   ```
+  请求参数:   
+  
+  参数名  | 说明
+  -----  | ---------
+  market | 交易区，比如 cnc
+  coin   | 币名，比如 btc
+  
+  
   应答（json）
   ```
   {
@@ -139,10 +165,19 @@ AEX RESTful API 协议说明文档 （V2）
   ```    
 ## 获取指定交易对最新成交数据   
 
-  请求（比如：market=cnc, coin=btc, limit可选，默认为10，最大50）
+  请求URL
   ```
   GET /v2/lasttrades.php?market={market}&coin={coin}&limit={limit}
   ```
+  请求参数:   
+  
+  参数名  | 说明
+  -----  | ---------
+  market | 交易区，比如 cnc
+  coin   | 币名，比如 btc
+  limit  | 查询数量，可选，默认是10，最大为50
+  
+  
   应答（json）
   ```
   {
@@ -161,10 +196,20 @@ AEX RESTful API 协议说明文档 （V2）
   ```      
 ## 获取指定交易对历史成交数据   
 
-  请求（比如：market=cnc, coin=btc, limit可选，默认为10，最大50）
+  请求URL
   ```
   GET /v2/trades.php?market={market}&coin={coin}&fromid={fromTradeID}&limit={limit}
   ```
+  请求参数:   
+  
+  参数名  | 说明
+  -----  | ---------
+  market | 交易区，比如 cnc
+  coin   | 币名，比如 btc
+  fromid | 从哪个交易ID开始查询，结果包含此交易ID
+  limit  | 查询数量，可选，默认是10，最大为50
+  
+  
   应答（json）
   ```
   {
