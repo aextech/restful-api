@@ -102,7 +102,7 @@ Error code | Description
   ```
   Request parameters: None
 
-
+              
   Response (json)
   ```
   {
@@ -116,7 +116,9 @@ Error code | Description
           "high": 75501, // the highest price within 24 hours
           "low": 72231, // lowest price within 24 hours
           "last":74654, // Last 1 transaction price
+          "last24": 81538, //The first price in the last 24 hours
           "vol":6448.69997, // 24 hour volume
+          "money": 444775.686371, //Last 24 hours turnover
           "buy":74666, // currently buy 1 price
           "sell":74728, // currently sells 1 price
           "range":0.0257 // The latest transaction price and the fluctuation ratio of the transaction price before 24 hours
@@ -152,7 +154,9 @@ Error code | Description
           "high": 75501, // the highest price within 24 hours
           "low": 72231, // lowest price within 24 hours
           "last":74654, // Last 1 transaction price
+          "last24": 81538, //The first price in the last 24 hours
           "vol":6448.69997, // 24 hour volume
+          "money": 444775.686371, //Last 24 hours turnover
           "buy":74666, // currently buy 1 price
           "sell":74728, // currently sells 1 price
           "range":0.0257 // The latest transaction price and the fluctuation ratio of the transaction price before 24 hours
